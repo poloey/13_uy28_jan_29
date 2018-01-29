@@ -5,8 +5,9 @@ $grid = $('.grid').isotope({
 
 
 $('button').on('click', function() {
-  $a = $(this).attr('data-name');
+  // var a = $(this).attr('data-name')
+  var a = this.dataset.name;
   $grid.isotope({
-    filter: $a
+    filter: a
   });
 });
