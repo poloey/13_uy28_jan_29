@@ -82,12 +82,122 @@ $('#hello').attr('src', 'some path');
 # Sorting using isotope jquery plugin      
 There are plenty of plugins out there for sorting and filtering. Therefore isotope is one of the most popular plugin.     
 
-after downloading jquery and isotope (https://isotope.metafizzy.co/) we will add in our html file 
-
-~~~js
+after downloading jquery and isotope (https://isotope.metafizzy.co/) we will add in our html file      
+~~~html     
 <script src="jquery-3.3.1.min.js"></script>
 <script src="isotope.pkgd.min.js"></script>
+~~~      
+
+       
+Markup for sorting content       
+
+~~~html
+<div class="grid">
+  <div class="item flower"> rose </div>
+  <div class="item bird">peacock</div>
+  <div class="item fruit">mango</div>
+  <div class="item flower">marigold</div>
+  <div class="item flower">jasmin</div>
+  <div class="item bird">parrot</div>
+  <div class="item fruit">banana</div>
+  <div class="item flower">tulip</div>
+  <div class="item flower">sunflower</div>
+</div>
 ~~~
+        
+Initialize isotope using jquery     
+~~~js
+// initializing 
+$grid = $('.grid').isotope({
+  itemSelector: '.item',
+  layoutMode: 'fitRows'
+});
+
+
+// sorting 
+$('button').on('click', function() {
+  // var a = $(this).attr('data-name')
+  var a = this.dataset.name;
+  $grid.isotope({
+    filter: a
+  });
+});
+~~~
+
+# Owl carousel      
+
+Owl carousel is one of the best carousel out there. Best thing about owl carousel is its touch friendly. I mean its functioning great in mobile device also          
+
+
+First download owl carousel. Add owl carousel css file and js file in your html      
+
+~~~html
+// html file
+<link rel="stylesheet" href="owl/assets/owl.carousel.css">
+<link rel="stylesheet" href="owl/assets/owl.theme.default.css">     
+// js file
+<script src="isotope.pkgd.min.js"></script>
+~~~
+
+// Markup for slider 
+~~~html
+<div class="grid">
+  <div class="item flower"> rose </div>
+  <div class="item bird">peacock</div>
+  <div class="item fruit">mango</div>
+  <div class="item flower">marigold</div>
+  <div class="item flower">jasmin</div>
+  <div class="item bird">parrot</div>
+  <div class="item fruit">banana</div>
+  <div class="item flower">tulip</div>
+  <div class="item flower">sunflower</div>
+</div>
+~~~
+
+Initialize for slider     
+~~~js
+// initialize owl carousel
+$('.owl-carousel').owlCarousel({
+  loop:true,
+    margin:10,
+    nav:true,
+    items: 1
+});
+~~~
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
